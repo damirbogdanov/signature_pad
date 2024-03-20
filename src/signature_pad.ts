@@ -191,6 +191,7 @@ export default class SignaturePad extends SignatureEventTarget {
     this.canvas.style.touchAction = 'none';
     this.canvas.style.msTouchAction = 'none';
     this.canvas.style.userSelect = 'none';
+    this.canvas.setAttribute('tabindex', '0'); // Enable focus on the canvas
 
     const isIOS =
       /Macintosh/.test(navigator.userAgent) && 'ontouchstart' in document;
@@ -213,6 +214,7 @@ export default class SignaturePad extends SignatureEventTarget {
     this.canvas.style.touchAction = 'auto';
     this.canvas.style.msTouchAction = 'auto';
     this.canvas.style.userSelect = 'auto';
+    this.canvas.setAttribute('tabindex', '0'); // Enable focus on the canvas
 
     this.canvas.removeEventListener('pointerdown', this._handlePointerStart);
     this.canvas.removeEventListener('pointermove', this._handlePointerMove);
